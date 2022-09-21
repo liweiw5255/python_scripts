@@ -32,7 +32,8 @@ def draw_sma(data, dt):
                         hspace=0.4)
 
 
-    plt.savefig("plots/sma_"+dt+".png")
+    plt.show()
+    #plt.savefig("plots/sma_"+dt+".png")
 
 def draw_solectria(data, dt):
 
@@ -45,10 +46,10 @@ def draw_solectria(data, dt):
         x_data = data[:,0]/(60*60)
         y_data = data[:,i]
 
-        solectria_axs[x, y].plot(x_data, y_data) 
-        solectria_axs[x,y].set_ylim((0,0.64))
+        solectria_axs[x,y].plot(x_data, y_data) 
+        solectria_axs[x,y].set_ylim((0,0.7))
         solectria_axs[x,y].set_title("NMB Fan "+str(i-6))
-        solectria_axs[x, y].set(xlabel= 'Duration (H)', ylabel= 'Current (A)')
+        solectria_axs[x,y].set(xlabel= 'Duration (H)', ylabel= 'Current (A)')
 
     plt.subplots_adjust(left=0.1,
                         bottom=0.1, 
@@ -57,7 +58,8 @@ def draw_solectria(data, dt):
                         wspace=0.4, 
                         hspace=0.4)
 
-    plt.savefig("plots/nmb_"+dt+".png")
+    plt.show()
+    #plt.savefig("plots/nmb_"+dt+".png")
 
 
 def main():
